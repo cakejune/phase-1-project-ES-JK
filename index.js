@@ -72,21 +72,37 @@ generateButton.addEventListener("click", (e) => {
   });
 
     quizForm.addEventListener('submit', (e) => { 
-    (e).preventDefault
+    e.preventDefault();
+    fetch('http://localhost:3000/people')
+    .then(res=>res.json())
+    .then(listOfPeople => {
+      const questions = querySelectorAll('ul.quiz-questions');
+      questions.forEach((eachQuestion)=>{
+        for(let i = 0; i<listOfPeople.length; i++) {
+        eachQuestion.setAttribute('data-id',listOfPeople[i]+1);
+      };
+        if (eachQuestion.id){ 
+          eachQuestions.style.display = "none";     
+      eachQuestion.textContent = `what is ${listOfPeople[0]}'s favorite color?`
+      eachQuestion.setAttribute('data-id', listOfPeople[0].id);
+      }
+    })
 
-    function quizCheck () {
+    })
+    })
       
-    }
-
-
-
+     function checkAnswer(inputField, actualAnswer) {
+      //does q1 answer === listOfPeople[q1.getAttribute('data-id')].color?
+      Q1.id
+      score = score+1;
+      return `You got ${score} answers right`;
+      if ( q1_val.value === name )
+      return "Congratulations, your answer is correct" ;
+      else 
+     return  "Your answer is incorrect. Please try again" ;
+      } 
     
   })
-
-
-
-
-});
 
 
 
