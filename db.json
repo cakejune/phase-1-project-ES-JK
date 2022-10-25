@@ -6,6 +6,27 @@
       "color": "Blue",
       "animal": "Bear",
       "teacher": "Chett"
+    },
+    {
+      "name": "Jake",
+      "color": "blue",
+      "animal": "bear",
+      "teacher": "Chett",
+      "id": 2
+    },
+    {
+      "name": "Richard",
+      "color": "red",
+      "animal": "bird",
+      "teacher": "Chett",
+      "id": 3
+    },
+    {
+      "name": "chett",
+      "color": "black",
+      "animal": "rhino",
+      "teacher": "Chett",
+      "id": 4
     }
   ]
 }

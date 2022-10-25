@@ -8,6 +8,8 @@ const nameField = document.querySelector("#namevalue");
 const q1Answer = document.querySelector('input#q1value');
 const q2Answer = document.querySelector('input#q2value');
 const q3Answer = document.querySelector('select.select-field');
+const quizForm = document.querySelector('form#quiz');
+const quizQ1Label = document.querySelector('#quizQ1');
 
 function main() {
   fetch("http://localhost:3000/people")
@@ -59,6 +61,8 @@ generateButton.addEventListener("click", (e) => {
       } else {
         console.log("Not enough submissions");
       }
+    //   quizQ1Label.textContent = `What is ${peopleList[0].name}'s favorite color?`;
+      formDivContainer.style.display = 'none';
     });
 });
 
