@@ -1,64 +1,11 @@
 {
   "people": [
     {
+      "id": 1,
       "name": "Elisa",
-      "email": "Elisa@ihatejake.com",
-      "phone-number": "234234",
-      "id": 1
-    },
-    {
-      "name": "Jake",
-      "email": "Jake@pleasedonthatemeElisa.com",
-      "phone-number": "234",
-      "id": 2
-    },
-    {
-      "name": "Brett",
-      "email": "Brett@elisadoesnthatebrett.com",
-      "phone-number": "",
-      "id": 3
-    },
-    {
-      "name": "ElisaIsRight",
-      "email": "DamnElisa@Damnnnnnnnn.com",
-      "phone-number": "",
-      "id": 4
-    },
-    {
-      "name": "asdfasd",
-      "email": "ssdfgz@ssdfgd.com",
-      "phone-number": "",
-      "id": 5
-    },
-    {
-      "name": "newName",
-      "email": "newEmail@gmail.com",
-      "phone-number": "",
-      "id": 6
-    },
-    {
-      "name": "asdf",
-      "email": "asdf@gmail.com",
-      "phone-number": "230498234",
-      "id": 7
-    },
-    {
-      "name": "asdf",
-      "email": "asdf@gmail.com",
-      "phone-number": "12312",
-      "id": 8
-    },
-    {
-      "name": "Person 9",
-      "email": "more@gmail.com",
-      "phone-number": "12312",
-      "id": 9
-    },
-    {
-      "name": "Person 10",
-      "email": "none@gmail.com",
-      "phone-number": "12312",
-      "id": 10
+      "color": "Blue",
+      "animal": "Bear",
+      "teacher": "Chett"
     }
   ]
 }

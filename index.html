@@ -17,17 +17,18 @@
         <ul id="review-list"></ul>
         <div class="form-style-3">
             <form id="totalform">
-            <fieldset><legend>Personal</legend>
-            <label for="field1"><span>Name <span class="required">*</span></span><input type="text" class="input-field" name="field1" value="" id="namevalue"/></label>
-            <label for="field2"><span>Email <span class="required">*</span></span><input type="email" class="input-field" name="field2" value="" id="emailvalue"/></label>
-            <label for="field3"><span>Phone <span class="required">*</span></span><input type="text" class="input-field" name="field3" value="" id="phonevalue"/></label>
-            <label for="field4"><span>Subject</span><select name="field4" class="select-field">
-            <option value="Appointment">Appointment</option>
-            <option value="Interview">Interview</option>
-            <option value="Regarding a post">Regarding a post</option>
+            <fieldset><legend>Crossword Questions</legend>
+            <label for="field1"><span>Name <span class="required">*</span></span><input type="text" class="input-field" name="QName" value="" id="namevalue"/></label>
+            <label for="Q1"><span>What is your favorite color?<span class="required">*</span></span><input type="email" class="input-field" name="Q1" value="" id="q1value"/></label>
+            <label for="Q2"><span>What is your favorite animal?<span class="required">*</span></span><input type="text" class="input-field" name="Q2" value="" id="q2value"/></label>
+            <label for="Q3"><span>Who is your favorite teacher?</span><select name="Q3" class="select-field">
+            <option value="Chett">Chett</option>
+            <option value="Chett">Chett</option>
+            <option value="Chett">Chett</option>
+            <option value="Someone who looks like Chett">Someone who looks like Chett</option>
             </select></label>
             </fieldset>
-            <fieldset><legend>Message</legend>
+            <fieldset><legend>Leave us a note!</legend>
             <label for="field6"><span>Message <span class="required">*</span></span><textarea name="field6" class="textarea-field"></textarea></label>
             <label><span> </span><input type="submit" value="Submit"/></label>
             </fieldset>
@@ -41,5 +42,11 @@
     </main>
     <div id="generate-message">BUTTON</div>
     <span id="buttonContainerSpan"><button id="generate">Generate Crossword</button></span>
+    <form>
+      <label for="Q1">Question 1:</label><br>
+      <input type="text" id="Q1" name="Q1"><br>
+      <label for="Q2">Question 2:</label><br>
+      <input type="text" id="Q2" name="Q2">
+    </form>
   </body>
 </html>
