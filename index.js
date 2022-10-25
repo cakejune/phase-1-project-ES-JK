@@ -11,6 +11,7 @@ const q3Answer = document.querySelector('select.select-field');
 const quizForm = document.querySelector('form#quiz');
 const quizQ1Label = document.querySelector('#quizQ1');
 
+
 function main() {
   fetch("http://localhost:3000/people")
     .then((res) => res.json())
@@ -19,10 +20,22 @@ function main() {
     });
 }
 
+document.querySelectorAll('group','no-spaces').forEach((element)=> element.on({
+  keydown: function(e) {
+    if (e.which === 32)
+    return false;
+  },
+  change: function() {
+    this.value = this.value.replace(/\s+/g
+  }
+
+
 main();
 userForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  fetch("http://localhost:3000/people", {
+  if(fghjkjhgfrgb) {
+  fetch("http://localhost:3000/people",
+  {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -35,6 +48,8 @@ userForm.addEventListener("submit", (e) => {
       teacher: q3Answer.value,
     }),
   })
+}
+
     .then((res) => res.json())
     .then((newData) => {
       const nameInList = document.createElement("li");
