@@ -27,6 +27,13 @@
       "animal": "rhino",
       "teacher": "Chett",
       "id": 4
+    },
+    {
+      "name": "Connor",
+      "color": "red",
+      "animal": "hippo",
+      "teacher": "Chett",
+      "id": 5
     }
   ]
 }

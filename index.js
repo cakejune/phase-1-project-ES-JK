@@ -48,7 +48,9 @@ generateButton.addEventListener("click", (e) => {
     .then((res) => res.json())
     .then((peopleList) => {
       console.log(`Submission Count: ${peopleList.length}.`);
-      if (peopleList.length >= 10) {
+      if (peopleList.length >= 2) {
+
+        //THIS IS WHERE WE BUILD THE QUIZ ELISA AND CONNOR
         formDivContainer.style.display = "none";
         const newCrossword = document.createElement("table");
         const crosswordPicture = document.createElement("img");
@@ -56,31 +58,34 @@ generateButton.addEventListener("click", (e) => {
           "#buttonContainerSpan"
         );
         crosswordPicture.src =
-          "https://umbc.edu/wp-content/uploads/2021/05/crossword.jpg";
+          "https://1.bp.blogspot.com/-XJJhIqBrLbg/Vd7TXWcxtmI/AAAAAAAAGdc/sK2h1V2_gOc/s1600/Jo%2Bquiz.PNG";
         buttonContainerSpan.append(crosswordPicture);
+
+        // THIS IS WHERE WE BUILD THE QUIZ ^^^^
       } else {
+        //TELL THE USER THAT WE CAN'T GENERATE A QUIZ UNTIL WE HAVE MORE SUBMISSIONS!
+
         console.log("Not enough submissions");
       }
     //   quizQ1Label.textContent = `What is ${peopleList[0].name}'s favorite color?`;
-      formDivContainer.style.display = 'none';
     });
 });
 
-function generateQuestions(arrayOfPeople) {
-  return "a list of questions";
-}
+// function generateQuestions(arrayOfPeople) {
+//   return "a list of questions";
+// }
 
-function populateQuestions(questions) {
-  const quizDiv = document.createElement("div");
-  quizDiv.setAttribute("class", "quiz");
-  const quizSubmitButton = document.createElement("button");
-  quizSubmitButton.setAttribute("class", "quiz");
-  quizSubmitButton.addEventListener('click', (e) => {
-    //push the form answers, check them against the real answers, spit out a result
+// function populateQuestions(questions) {
+//   const quizDiv = document.createElement("div");
+//   quizDiv.setAttribute("class", "quiz");
+//   const quizSubmitButton = document.createElement("button");
+//   quizSubmitButton.setAttribute("class", "quiz");
+//   quizSubmitButton.addEventListener('click', (e) => {
+//     //push the form answers, check them against the real answers, spit out a result
 
-  })
-}
+//   })
+// }
 
 
-function showResult() {
-}
+// function showResult() {
+// }
