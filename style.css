@@ -8,7 +8,7 @@
 }
 .form-style-3 label > span{
 	float: left;
-	width: 100px;
+	width: 200px;
 	color: #F072A9;
 	font-weight: bold;
 	font-size: 13px;
@@ -87,4 +87,9 @@
 .required{
 	color:red;
 	font-weight:normal;
+}
+
+#quizDiv{
+	background-color: lightgrey;
+	
 }

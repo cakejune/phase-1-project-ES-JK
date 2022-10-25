@@ -2,44 +2,38 @@
   "people": [
     {
       "id": 1,
-      "question-1": "Hello",
-      "question-2": "Hi"
-    },
-    {
       "name": "Elisa",
-      "email": "Elisa@ihatejake.com",
-      "phone-number": "234234",
-      "id": 2
+      "color": "Blue",
+      "animal": "Bear",
+      "teacher": "Chett"
     },
     {
       "name": "Jake",
-      "email": "Jake@pleasedonthatemeElisa.com",
-      "phone-number": "234",
+      "color": "blue",
+      "animal": "bear",
+      "teacher": "Chett",
+      "id": 2
+    },
+    {
+      "name": "Richard",
+      "color": "red",
+      "animal": "bird",
+      "teacher": "Chett",
       "id": 3
     },
     {
-      "name": "Brett",
-      "email": "Brett@elisadoesnthatebrett.com",
-      "phone-number": "",
+      "name": "chett",
+      "color": "black",
+      "animal": "rhino",
+      "teacher": "Chett",
       "id": 4
     },
     {
-      "name": "ElisaIsRight",
-      "email": "DamnElisa@Damnnnnnnnn.com",
-      "phone-number": "",
+      "name": "Connor",
+      "color": "red",
+      "animal": "hippo",
+      "teacher": "Chett",
       "id": 5
-    },
-    {
-      "name": "asdfasd",
-      "email": "ssdfgz@ssdfgd.com",
-      "phone-number": "",
-      "id": 6
-    },
-    {
-      "name": "newName",
-      "email": "newEmail@gmail.com",
-      "phone-number": "",
-      "id": 7
     }
   ]
 }
