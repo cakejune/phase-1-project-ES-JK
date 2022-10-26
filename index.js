@@ -35,7 +35,7 @@ async function getQuiz() {
     QnAs.push(
       {
         question: `What is ${person.name}'s favorite color?`,
-        answer: person.color,
+        answer: person.color, //add group here as a 3rd key-value pair to have multiple quiz's
       },
       {
         question: `What is ${person.name}'s favorite animal?`,
@@ -90,7 +90,6 @@ function checkAnswers(quizInputs) {
       inputField.style.color = "red";
     }
   }
-  console.log(correctAnswers);
   return correctAnswers;
 }
 
