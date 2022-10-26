@@ -9,15 +9,20 @@ const q2Answer = document.querySelector("input#q2value");
 const q3Answer = document.querySelector("select.select-field");
 const quizForm = document.querySelector("form#quizForm");
 const quizQ1Label = document.querySelector("#quizQ1"); //aray of questions
-const questionUl = document.querySelector('#questions-list');
+const questionUl = document.querySelector("#questions-list");
+const submitAnswers = document.querySelector("#submit-answers");
 
 async function main() {
-  const quiz = await getQuiz();
-  generateButton.addEventListener('click', () => {
-    renderQuiz(quiz);
-  })
-    }
-
+  generateButton.addEventListener("click", async () => {
+    const quiz = await getQuiz();
+    const quizInputs = renderQuiz(quiz);
+    submitAnswers.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const correctAnswers = await checkAnswers(quizInputs);
+    console.log(`You got ${correctAnswers} answers right!`);
+    });
+  });
+}
 
 async function getQuiz() {
   const resp = await fetch("http://localhost:3000/people");
@@ -33,7 +38,7 @@ async function getQuiz() {
         question: `What is ${person.name}'s favorite animal?`,
         answer: person.animal,
       },
-      {         
+      {
         question: `Who is ${person.name}'s favorite teacher?`,
         answer: person.teacher,
       }
@@ -43,29 +48,45 @@ async function getQuiz() {
 }
 
 function renderQuiz(arrayOfQuestionsAndAnswers) {
-    if(arrayOfQuestionsAndAnswers.length >= 25) {
-    arrayOfQuestionsAndAnswers.forEach((qna)=>{
-        const question = document.createElement('li');
-        const questionInput = document.createElement('input');
-        question.textContent = qna.question;
-        questionUl.appendChild(question, questionInput);
-        
-    });
-}
-else {
+  const allInputs = [];
+  if (arrayOfQuestionsAndAnswers.length >= 4) {
+    for (const qna of arrayOfQuestionsAndAnswers) {
+      const question = document.createElement("li");
+      const questionInput = document.createElement("input");
+      questionInput.setAttribute("answer", qna.answer);
+      question.textContent = qna.question;
+      questionUl.appendChild(question);
+      question.appendChild(questionInput);
+      allInputs.push(questionInput);
+    }
+  } else {
     console.log("Not enough submissions.");
+  }
+  return allInputs;
 }
-  // create questions based on the data
-//   for (const qnapair of QnAs){
-//     //create element
-//     //make element's contents = question in the object
-//     //assign this to a constant
-//   }
 
+function checkAnswers(quizInputs) {
+  let correctAnswers = 0;
+  for (const inputField of quizInputs) {
+    if (inputField.attributes.answer.value === inputField.value.toLowerCase()) {
+      inputField.style.color = "green";
+      correctAnswers++;
+    } else {
+      inputField.style.color = "red";
+      console.log(
+        `The answer is : ${inputField.attributes.answer}, but the inputted value is : ${inputField.value.toLowerCase()}`
+      );
+    }
+  }
+  console.log(correctAnswers);
+  return correctAnswers;
 }
-// function writeQuestions(person, key) {
 
-// }
+function RestrictSpace() {
+  if (event.keyCode == 32) {
+    return false;
+  }
+}
 
 main();
 
@@ -78,23 +99,20 @@ userForm.addEventListener("submit", (e) => {
       accept: "application/json",
     },
     body: JSON.stringify({
-      name: nameField.value,
-      color: q1Answer.value,
-      animal: q2Answer.value,
-      teacher: q3Answer.value,
+      name: nameField.value.toLowerCase(),
+      color: q1Answer.value.toLowerCase(),
+      animal: q2Answer.value.toLowerCase(),
+      teacher: q3Answer.value.toLowerCase(),
     }),
   })
     .then((res) => res.json())
     .then((newData) => {
-      const nameInList = document.createElement("li");
-      nameInList.textContent = newData.name;
-      console.log(nameInList);
-      newPersonData.append(nameInList);
+      console.log(newData);
     });
 });
 
 // generateButton.addEventListener("click", (e) => {
-  
+
 //     fetch("http://localhost:3000/people")
 //     .then((res) => res.json())
 //     .then((listOfPeople) => {
@@ -140,15 +158,6 @@ userForm.addEventListener("submit", (e) => {
 //       // });
 //     });
 // });
-
-function checkAnswer(inputField, actualAnswer) {
-  //does q1 answer === listOfPeople[q1.getAttribute('data-id')].color?
-  Q1.id;
-  score = score + 1;
-  return `You got ${score} answers right`;
-  if (q1_val.value === name) return "Congratulations, your answer is correct";
-  else return "Your answer is incorrect. Please try again";
-}
 
 // function generateQuestions(arrayOfPeople) {
 //   return "a list of questions";

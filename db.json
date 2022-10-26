@@ -1,39 +1,25 @@
 {
   "people": [
     {
-      "id": 1,
-      "name": "Elisa",
-      "color": "Blue",
-      "animal": "Bear",
-      "teacher": "Chett"
-    },
-    {
-      "name": "Jake",
+      "name": "elisa",
       "color": "blue",
       "animal": "bear",
-      "teacher": "Chett",
+      "teacher": "chett",
+      "id": 1
+    },
+    {
+      "name": "fred",
+      "color": "blue",
+      "animal": "bears",
+      "teacher": "chett",
       "id": 2
     },
     {
-      "name": "Richard",
-      "color": "red",
+      "name": "jeffrey",
+      "color": "orange",
       "animal": "bird",
-      "teacher": "Chett",
+      "teacher": "chett",
       "id": 3
-    },
-    {
-      "name": "chett",
-      "color": "black",
-      "animal": "rhino",
-      "teacher": "Chett",
-      "id": 4
-    },
-    {
-      "name": "Connor",
-      "color": "red",
-      "animal": "hippo",
-      "teacher": "Chett",
-      "id": 5
     }
   ]
 }
