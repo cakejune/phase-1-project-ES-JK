@@ -11,6 +11,8 @@ const quizForm = document.querySelector("form#quizForm");
 const quizQ1Label = document.querySelector("#quizQ1"); //aray of questions
 const questionUl = document.querySelector("#questions-list");
 const submitAnswers = document.querySelector("#submit-answers");
+// comment section
+const note = document.querySelector("#note");
 
 async function main() {
   generateButton.addEventListener("click", generateQuiz);
@@ -122,6 +124,18 @@ userForm.addEventListener("submit", (e) => {
       console.log(newData);
     });
 });
+// function newNotes
+// const cohortNotes = document.createElement('li')
+// cohortNotes.textContent = 
+
+
+
+
+
+
+
+
+
 
 // generateButton.addEventListener("click", (e) => {
 

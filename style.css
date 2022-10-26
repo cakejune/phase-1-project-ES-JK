@@ -112,3 +112,6 @@ ol li::marker {
 	color: #C94A81;
 	font-weight: bold;
 }
+div.messages-container{
+	overflow: scroll;
+}
