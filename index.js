@@ -66,6 +66,7 @@ function renderQuiz(arrayOfQuestionsAndAnswers) {
 
   arrayOfQuestionsAndAnswers.forEach((singleQnA) => {
     const question = document.createElement("li");
+    question.setAttribute('class','populatedQuestion');
     const questionInput = document.createElement("input");
     questionInput.setAttribute("answer", singleQnA.answer);
     question.textContent = singleQnA.question;

@@ -91,5 +91,23 @@
 
 #quizDiv{
 	background-color: lightgrey;
-	
 }
+
+.populatedQuestion{
+	padding: 5px 5px 5px 5px;
+	border-radius: 3px;
+	color: #C94A81;
+	font-weight: bold;
+	font-size: 13px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.populatedQuestion input {
+	margin-left: 2em;
+	padding: 2px;
+	border-radius: 2px;
+}
+
+ol li::marker {
+	color: #C94A81;
+	font-weight: bold;
