@@ -13,14 +13,16 @@ const questionUl = document.querySelector("#questions-list");
 const submitAnswers = document.querySelector("#submit-answers");
 
 async function main() {
-  generateButton.addEventListener("click", async () => {
-    const quiz = await getQuiz();
-    const quizInputs = renderQuiz(quiz);
-    submitAnswers.addEventListener("click", async (e) => {
-      e.preventDefault();
-      const correctAnswers = await checkAnswers(quizInputs);
+  generateButton.addEventListener("click", generateQuiz);
+}
+
+async function generateQuiz(generateQuizEvent) {
+  const quiz = await getQuiz();
+  const quizInputs = renderQuiz(quiz);
+  submitAnswers.addEventListener("click", (submitAnswersEvent) => {
+    submitAnswersEvent.preventDefault();
+    const correctAnswers = checkAnswers(quizInputs);
     console.log(`You got ${correctAnswers} answers right!`);
-    });
   });
 }
 
@@ -28,6 +30,7 @@ async function getQuiz() {
   const resp = await fetch("http://localhost:3000/people");
   const submissions = await resp.json();
   const QnAs = [];
+  const selectedQnAs = [];
   for (const person of submissions) {
     QnAs.push(
       {
@@ -44,38 +47,47 @@ async function getQuiz() {
       }
     );
   }
-  return QnAs;
+
+  for (let i = 0; i < 10; i++) {
+    //get 10 random QnAs from the array I created above (QnAs) and adding them to a new array (selectedQnAs)
+    const index = Math.floor(Math.random() * (QnAs.length - 1));
+    selectedQnAs.push(QnAs[index]);
+    QnAs.splice(index, 1);
+  }
+
+  return selectedQnAs;
 }
 
 function renderQuiz(arrayOfQuestionsAndAnswers) {
-  const allInputs = [];
-  if (arrayOfQuestionsAndAnswers.length >= 4) {
-    for (const qna of arrayOfQuestionsAndAnswers) {
-      const question = document.createElement("li");
-      const questionInput = document.createElement("input");
-      questionInput.setAttribute("answer", qna.answer);
-      question.textContent = qna.question;
-      questionUl.appendChild(question);
-      question.appendChild(questionInput);
-      allInputs.push(questionInput);
-    }
-  } else {
-    console.log("Not enough submissions.");
+  while (questionUl.firstChild) {
+    questionUl.removeChild(questionUl.firstChild);
   }
+  const allInputs = [];
+
+  arrayOfQuestionsAndAnswers.forEach((singleQnA) => {
+    const question = document.createElement("li");
+    const questionInput = document.createElement("input");
+    questionInput.setAttribute("answer", singleQnA.answer);
+    question.textContent = singleQnA.question;
+    questionUl.appendChild(question);
+    question.appendChild(questionInput);
+    allInputs.push(questionInput);
+  });
+
   return allInputs;
 }
 
 function checkAnswers(quizInputs) {
   let correctAnswers = 0;
   for (const inputField of quizInputs) {
-    if (inputField.attributes.answer.value === inputField.value.toLowerCase()) {
+    if (
+      inputField.attributes.answer.value.toLowerCase() ===
+      inputField.value.toLowerCase()
+    ) {
       inputField.style.color = "green";
       correctAnswers++;
     } else {
       inputField.style.color = "red";
-      console.log(
-        `The answer is : ${inputField.attributes.answer}, but the inputted value is : ${inputField.value.toLowerCase()}`
-      );
     }
   }
   console.log(correctAnswers);

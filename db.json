@@ -20,6 +20,13 @@
       "animal": "bird",
       "teacher": "chett",
       "id": 3
+    },
+    {
+      "name": "sdfg",
+      "color": "sdfg",
+      "animal": "sdfg",
+      "teacher": "chett",
+      "id": 4
     }
   ]
 }
