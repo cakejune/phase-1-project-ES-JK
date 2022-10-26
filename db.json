@@ -34,6 +34,13 @@
       "animal": "cat",
       "teacher": "chett",
       "id": 5
+    },
+    {
+      "name": "ryan",
+      "color": "green",
+      "animal": "bear",
+      "teacher": "chett",
+      "id": 6
     }
   ]
 }
