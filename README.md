@@ -24,4 +24,11 @@ with a time/date stamp, the user(name from form) who submitted the message, and 
 - Let's make better questions.
 - Let's put instructions on the website, telling the user about the "spaces" restriction onkeydown, and how using plural
 will confuse the quiz taking.
-- Submit form - make the POST submit form change color when hovered over, change color when clicked, and change back when keyup(or whatever it is)
+√ Submit form - make the POST submit form change color when hovered over, change color when clicked, and change back when keyup(or whatever it is) - 
+
+Idea:
+
+every user has a piece of a puzzle:
+areas of a website are hidden behind keys. Keys are the shapes of a string of puzzles.
+only when users put their unique pieces together in the proper order does the key fit
+once the key fits, the users can access the area of the website. 

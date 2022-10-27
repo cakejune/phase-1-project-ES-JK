@@ -29,25 +29,29 @@
       "id": 4
     },
     {
-      "name": "ghdaks",
-      "iceCream": "dasd",
-      "season": "fasfa",
+<<<<<<< HEAD
+     
+=======
+      "name": "jake",
+      "iceCream": "mintchocolatechip",
+      "season": "autumn",
       "teacher": "chett",
       "id": 5
+    }
+  ],
+  "messages": [
+    {
+      "name": "Jake",
+      "messsage": "Hello",
+      "timeStamp": 1666909838002,
+      "id": 1
     },
     {
-      "name": "fwefqw",
-      "iceCream": "wfqwf",
-      "season": "fwef",
-      "teacher": "chett",
-      "id": 6
-    },
-    {
-      "name": "fwf",
-      "iceCream": "fwef",
-      "season": "gweg",
-      "teacher": "chett",
-      "id": 7
+      "name": "Shane",
+      "messsage": "Your project belongs to me now.",
+      "timeStamp": 1666911128742,
+      "id": 2
+>>>>>>> 02e629f5af14bbedf45d7ca306ff8dc8a2adc83e
     }
   ]
 }

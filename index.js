@@ -1,4 +1,5 @@
 const userForm = document.querySelector("form#totalform");
+const messagesForm = document.querySelector("form#messageForm");
 const newPersonData = document.querySelector("#newPerson");
 const generateButton = document.querySelector("#generate");
 const formDivContainer = document.querySelector("div.form-style-3");
@@ -6,6 +7,8 @@ const formDivContainer = document.querySelector("div.form-style-3");
 const nameField = document.querySelector("#namevalue");
 const q1Answer = document.querySelector("input#q1value");
 const q2Answer = document.querySelector("input#q2value");
+const messageAnswer = document.querySelector("#messageValue");
+const messageNameValue = document.querySelector("#messageNameValue");
 const q3Answer = document.querySelector("select.select-field");
 const quizForm = document.querySelector("form#quizForm");
 const quizQ1Label = document.querySelector("#quizQ1"); //aray of questions
@@ -14,8 +17,64 @@ const submitAnswers = document.querySelector("#submit-answers");
 const messagesContainer = document.querySelector("div#messages-container");
 
 async function main() {
+  const arrayOfMessages = await grabMessages();
+  arrayOfMessages.forEach((userMessage) => {
+    appendMessage(userMessage.name, userMessage.message, userMessage.timeStamp);
+  });
+  messagesForm.addEventListener("submit", postUserMessage);
   userForm.addEventListener("submit", submitForm);
   generateButton.addEventListener("click", generateQuiz);
+}
+
+async function grabMessages() {
+  const resp = await fetch("http://localhost:3000/messages");
+  const arrayOfMessages = resp.json();
+  return arrayOfMessages;
+}
+
+async function postUserMessage(submitFormEvent) {
+  submitFormEvent.preventDefault();
+  var dt = Date.now();
+  const resp = await fetch("http://localhost:3000/messages", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      accept: "application/json",
+    },
+    body: JSON.stringify({
+      name: messageNameValue.value,
+      messsage: messageAnswer.value,
+      timeStamp: dt,
+    }),
+  });
+  const messageReceived = await appendMessage(
+    messageNameValue.value,
+    messageAnswer.value,
+    dt
+  );
+}
+
+function appendMessage(name, message, timestamp) {
+  const messageBox = document.createElement("div");
+  messageBox.setAttribute("class", "message-box");
+  const boxTop = document.createElement("div");
+  boxTop.setAttribute("class", "box-top");
+  const messageName = document.createElement("div");
+  messageName.setAttribute("class", "message-name");
+  const timeStamp = document.createElement("div");
+  timeStamp.setAttribute("class", "time-stamp");
+  const newMessage = document.createElement("div");
+  newMessage.setAttribute("class", "newMessage");
+  messageName.textContent = name;
+  newMessage.textContent = message;
+  timeStamp.textContent = `Epoch Time Stamp: ${timestamp}`;
+
+  messagesContainer.appendChild(messageBox);
+  messagesContainer.appendChild(newMessage);
+  messageBox.appendChild(boxTop);
+  boxTop.appendChild(messageName);
+  boxTop.appendChild(timeStamp);
+  messageBox.appendChild(newMessage);
 }
 
 async function submitForm(submitFormEvent) {
@@ -120,31 +179,6 @@ function RestrictSpace() {
   if (event.keyCode == 32) {
     return false;
   }
-}
-
-function createMessage(name, message) {
-  const messageBox = document.createElement("div");
-  messageBox.setAttribute("class", "message-box");
-  const boxTop = document.createElement("div");
-  boxTop.setAttribute("class", "box-top");
-  const messageName = document.createElement("div");
-  messageName.setAttribute("class", "message-name");
-  const timeStamp = document.createElement("div");
-  timeStamp.setAttribute("class", "time-stamp");
-  const newMessage = document.createElement("div");
-  newMessage.setAttribute("class", "message");
-
-  messageName.textContent = name;
-  newMessage.textContent = message;
-  var dt = Date.now();
-  console.log(dt);
-  
-
-  messagesContainer.appendChild(messageBox);
-  messagesContainer.appendChild(newMessage);
-  messageBox.appendChild(boxTop);
-  boxTop.appendChild(messageName, timeStamp);
-  messageBox.appendChild(newMessage);
 }
 // <div class="message-box">
 //           <div class="box-top">

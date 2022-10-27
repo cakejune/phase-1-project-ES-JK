@@ -20,7 +20,7 @@
           <div class="message-box">
             <div class="box-top">
               <div class="message-name">Elisa</div>
-              <div class="time-stamp">3:52PM on 10/27/2022</div>
+              <div class="time-stamp">Epoch Time Stamp: 1666900350</div>
             </div>
             <div class="message">"I hate Jake, but I love this project."</div>
           </div>
@@ -84,19 +84,31 @@
                 ><span>Group</span
                 ><select name="Q4" class="select-field">
                   <option value="flatiron">Flatiron NYC Cohort</option>
-                </select></label
-              >
-            </fieldset>
-            <fieldset>
-              <legend>Leave us a note!</legend>
-              <label for="field6"
-                ><span>Message <span class="required">*</span></span
-                ><textarea name="field6" class="textarea-field"></textarea>
+                </select>
               </label>
               <label
                 ><span> </span
                 ><input type="submit" class="button" value="Submit"
               /></label>
+            </fieldset>
+          </form>
+          <form id="messageForm">
+            <fieldset>
+              <legend>Leave us a note!</legend>
+              <label for="messageName"
+                ><span>Name: <span class="required">*</span></span
+                ><input
+                  type="text"
+                  class="input-field"
+                  name="MName"
+                  value=""
+                  id="messageNameValue"
+              /></label>
+              <label
+            ><span>Message <span class="required">*</span></span>
+            <input type="text" class="input-field" name="message" placeholder="Write your message here!" value="" id="messageValue">
+            <input type="submit" class="button" value="Submit"
+          /></label>
             </fieldset>
           </form>
         </div>
