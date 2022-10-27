@@ -1,46 +1,57 @@
 {
   "people": [
     {
-      "name": "elisa",
-      "color": "blue",
-      "animal": "bear",
+      "name": "jake",
+      "iceCream": "mintchocolatechip",
+      "season": "fall",
       "teacher": "chett",
       "id": 1
     },
     {
-      "name": "fred",
-      "color": "blue",
-      "animal": "bears",
+      "name": "connor",
+      "iceCream": "coffee",
+      "season": "winter",
       "teacher": "chett",
       "id": 2
     },
     {
-      "name": "jeffrey",
-      "color": "orange",
-      "animal": "bird",
+      "name": "elisa",
+      "iceCream": "toffee",
+      "season": "summer",
       "teacher": "chett",
       "id": 3
     },
     {
-      "name": "sdfg",
-      "color": "sdfg",
-      "animal": "sdfg",
+      "name": "fred",
+      "iceCream": "chocolate",
+      "season": "winter",
       "teacher": "chett",
       "id": 4
     },
     {
-      "name": "chett",
-      "color": "green",
-      "animal": "cat",
+<<<<<<< HEAD
+     
+=======
+      "name": "jake",
+      "iceCream": "mintchocolatechip",
+      "season": "autumn",
       "teacher": "chett",
       "id": 5
+    }
+  ],
+  "messages": [
+    {
+      "name": "Jake",
+      "messsage": "Hello",
+      "timeStamp": 1666909838002,
+      "id": 1
     },
     {
-      "name": "ryan",
-      "color": "green",
-      "animal": "bear",
-      "teacher": "chett",
-      "id": 6
+      "name": "Shane",
+      "messsage": "Your project belongs to me now.",
+      "timeStamp": 1666911128742,
+      "id": 2
+>>>>>>> 02e629f5af14bbedf45d7ca306ff8dc8a2adc83e
     }
   ]
 }
