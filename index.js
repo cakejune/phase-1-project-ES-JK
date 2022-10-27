@@ -3,6 +3,8 @@ const messagesForm = document.querySelector("form#messageForm");
 const newPersonData = document.querySelector("#newPerson");
 const generateButton = document.querySelector("#generate");
 const formDivContainer = document.querySelector("div.form-style-3");
+const formContainer = document.querySelector('div#formContainer');
+const quizDiv = document.querySelector('#quizDiv');
 //lets grab our answers on our form
 const nameField = document.querySelector("#namevalue");
 const q1Answer = document.querySelector("input#q1value");
@@ -17,6 +19,7 @@ const submitAnswers = document.querySelector("#submit-answers");
 const messagesContainer = document.querySelector("div#messages-container");
 
 async function main() {
+  quizDiv.style.display = "none";
   const arrayOfMessages = await grabMessages();
   arrayOfMessages.forEach((userMessage) => {
     appendMessage(userMessage.name, userMessage.message, userMessage.timeStamp);
@@ -97,6 +100,8 @@ async function submitForm(submitFormEvent) {
 }
 
 async function generateQuiz(generateQuizEvent) {
+  quizDiv.style.display = "block";
+  formContainer.style.display = "none";
   const quiz = await getQuiz();
   const quizInputs = renderQuiz(quiz);
   submitAnswers.addEventListener("click", (submitAnswersEvent) => {
@@ -139,6 +144,7 @@ async function getQuiz() {
 }
 
 function renderQuiz(arrayOfQuestionsAndAnswers) {
+  
   while (questionUl.firstChild) {
     questionUl.removeChild(questionUl.firstChild);
   }
@@ -153,6 +159,7 @@ function renderQuiz(arrayOfQuestionsAndAnswers) {
     questionUl.appendChild(question);
     question.appendChild(questionInput);
     allInputs.push(questionInput);
+    //Make the post results button
   });
 
   return allInputs;
