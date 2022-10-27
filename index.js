@@ -136,6 +136,9 @@ function createMessage(name, message) {
 
   messageName.textContent = name;
   newMessage.textContent = message;
+  var dt = Date.now();
+  console.log(dt);
+  
 
   messagesContainer.appendChild(messageBox);
   messagesContainer.appendChild(newMessage);

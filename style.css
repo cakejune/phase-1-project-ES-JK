@@ -7,11 +7,18 @@ main {
   height: 60vh;
 }
 
+#background {
+	flex-direction: column;
+	background-image: url(https://cdn.discordapp.com/attachments/1034470868069400708/1035230691199291454/Enlight305.jpg);
+	height: 1080px;
+    width: 1920px;
+}
+
 #messages-container {
   display: flex;
   float: right;
   flex-direction: column;
-  background-color: white;
+  background-color: transparent;
   overflow-y: scroll;
   height: 100%;
   width: 450px;
