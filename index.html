@@ -11,105 +11,113 @@
   </head>
   <body>
     <div class="image" id="background">
-    <header>
-      <h1>Flatiron Crossword Form</h1>
-    </header>
-    <main>
-      <div id="messages-container">
-        <h3 id="messages-header">😺 Messages from our friends 😺</h3> 
-        <div class="message-box">
-          <div class="box-top">
-            <div class="message-name">Elisa
+      <header>
+        <h1>Flatiron Crossword Form</h1>
+      </header>
+      <main>
+        <div id="messages-container">
+          <h3 id="messages-header">😺 Messages from our friends 😺</h3>
+          <div class="message-box">
+            <div class="box-top">
+              <div class="message-name">Elisa</div>
+              <div class="time-stamp">3:52PM on 10/27/2022</div>
             </div>
-            <div class="time-stamp">3:52PM on 10/27/2022</div>
+            <div class="message">"I hate Jake, but I love this project."</div>
           </div>
-          <div class="message">"I hate Jake, but I love this project."</div>
         </div>
-      </div>
-      <div class="form-style-3">
-        <form id="totalform">
-          <fieldset>
-            <legend>Form Questions</legend>
-            <label for="typing-instructions" id="psa"><span>*spaces are disabled for answers. please avoid using plural forms of nouns!*</span></label>
-            <label for="field1"
-              ><span>Name: <span class="required"
-                >*</span></span
-              ><input
-                type="text"
-                class="input-field"
-                name="QName"
-                value=""
-                id="namevalue"
-            /></label>
-            <label onkeypress="return RestrictSpace()" for="Q1"
-              ><span
-                >What is your favorite ice cream flavor?<span class="required"
-                  >*</span
-                ></span
-              ><input
-                type="text"
-                class="input-field"
-                name="Q1"
-                value=""
-                id="q1value"
-            /></label>
-            <label onkeypress="return RestrictSpace()" for="Q2"
-              ><span
-                >What is your favorite season of the year?<span class="required"
-                  >*</span
-                ></span
-              ><input
-                type="text"
-                class="input-field"
-                name="Q2"
-                value=""
-                id="q2value"
-            /></label>
-            <label for="Q3"
-              ><span>Who is your favorite teacher?</span
-              ><select name="Q3" class="select-field">
-                <option value="Chett">Chett</option>
-                <option value="Chett">Chett</option>
-                <option value="Chett">Chett</option>
-                <option value="Someone who looks like Chett">
-                  Someone who looks like Chett
-                </option>
-              </select></label
-            >
-            <label for="Q4"
-              ><span>Group</span
-              ><select name="Q4" class="select-field">
-                <option value="flatiron">Flatiron NYC Cohort</option>
-              </select></label
-            >
-          </fieldset>
-          <fieldset>
-            <legend>Leave us a note!</legend>
-            <label for="field6"
-              ><span>Message <span class="required">*</span></span
-              ><textarea name="field6" class="textarea-field"></textarea>
-            </label>
-            <label><span> </span><input type="submit" class="button" value="Submit" /></label>
-          </fieldset>
-        </form>
-      </div>
-    </main>
-    <div id="quizContainerDiv">
-    <div id="generate-message">BUTTON</div>
-    <span id="buttonContainerSpan">
-      <button class="button" id="generate">Generate Quiz</button>
-    </span>
-    <div id="quizDiv">
-      <form id="quizForm">
-        <fieldset>
-          <legend>"GET" to know your Cohort 😺</legend>
-          <ol id="questions-list"></ol>
-          <button class="button" id="submit-answers">'POST' Results</button>
-        </fieldset>
-      
-      </form>
-    </div>
-    </div>
+        <div class="form-style-3">
+          <form id="totalform">
+            <fieldset>
+              <legend>Form Questions</legend>
+              <label for="typing-instructions" id="psa"
+                ><span
+                  >*spaces are disabled for answers. please avoid using plural
+                  forms of nouns!*</span
+                ></label
+              >
+              <label for="field1"
+                ><span>Name: <span class="required">*</span></span
+                ><input
+                  type="text"
+                  class="input-field"
+                  name="QName"
+                  value=""
+                  id="namevalue"
+              /></label>
+              <label onkeypress="return RestrictSpace()" for="Q1"
+                ><span
+                  >What is your favorite ice cream flavor?<span class="required"
+                    >*</span
+                  ></span
+                ><input
+                  type="text"
+                  class="input-field"
+                  name="Q1"
+                  value=""
+                  id="q1value"
+              /></label>
+              <label onkeypress="return RestrictSpace()" for="Q2"
+                ><span
+                  >What is your favorite season of the year?<span
+                    class="required"
+                    >*</span
+                  ></span
+                ><input
+                  type="text"
+                  class="input-field"
+                  name="Q2"
+                  value=""
+                  id="q2value"
+              /></label>
+              <label for="Q3"
+                ><span>Who is your favorite teacher?</span
+                ><select name="Q3" class="select-field">
+                  <option value="Chett">Chett</option>
+                  <option value="Chett">Chett</option>
+                  <option value="Chett">Chett</option>
+                  <option value="Someone who looks like Chett">
+                    Someone who looks like Chett
+                  </option>
+                </select></label
+              >
+              <label for="Q4"
+                ><span>Group</span
+                ><select name="Q4" class="select-field">
+                  <option value="flatiron">Flatiron NYC Cohort</option>
+                </select></label
+              >
+            </fieldset>
+            <fieldset>
+              <legend>Leave us a note!</legend>
+              <label for="field6"
+                ><span>Message <span class="required">*</span></span
+                ><textarea name="field6" class="textarea-field"></textarea>
+              </label>
+              <label
+                ><span> </span
+                ><input type="submit" class="button" value="Submit"
+              /></label>
+            </fieldset>
+          </form>
+        </div>
+        <div id="quizContainerDiv">
+          <div id="generate-message">BUTTON</div>
+          <span id="buttonContainerSpan">
+            <button class="button" id="generate">Generate Quiz</button>
+          </span>
+          <div id="quizDiv">
+            <form id="quizForm">
+              <fieldset>
+                <legend>"GET" to know your Cohort 😺</legend>
+                <ol id="questions-list"></ol>
+                <button class="button" id="submit-answers">
+                  'POST' Results
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>

@@ -176,6 +176,10 @@ main {
   margin-top: 10px;
 }
 
+#quizContainerDiv {
+	display: flex;
+}
+
 .populatedQuestion {
   padding: 5px 5px 5px 5px;
   border-radius: 3px;
