@@ -10,19 +10,29 @@
     <script defer type="text/javascript" src="index.js"></script>
   </head>
   <body>
-    <div id="background">
+    <div class="image" id="background">
     <header>
       <h1>Flatiron Crossword Form</h1>
     </header>
     <main>
-      <ul id="review-list"></ul>
+      <div id="messages-container">
+        <h3 id="messages-header">😺 Messages from our friends 😺</h3> 
+        <div class="message-box">
+          <div class="box-top">
+            <div class="message-name">Elisa
+            </div>
+            <div class="time-stamp">3:52PM on 10/27/2022</div>
+          </div>
+          <div class="message">"I hate Jake, but I love this project."</div>
+        </div>
+      </div>
       <div class="form-style-3">
         <form id="totalform">
           <fieldset>
             <legend>Form Questions</legend>
             <label for="typing-instructions" id="psa"><span>*spaces are disabled for answers. please avoid using plural forms of nouns!*</span></label>
             <label for="field1"
-              ><span>Name <span class="required"
+              ><span>Name: <span class="required"
                 >*</span></span
               ><input
                 type="text"
@@ -33,7 +43,7 @@
             /></label>
             <label onkeypress="return RestrictSpace()" for="Q1"
               ><span
-                >What is your favorite color?<span class="required"
+                >What is your favorite ice cream flavor?<span class="required"
                   >*</span
                 ></span
               ><input
@@ -45,7 +55,7 @@
             /></label>
             <label onkeypress="return RestrictSpace()" for="Q2"
               ><span
-                >What is your favorite animal?<span class="required"
+                >What is your favorite season of the year?<span class="required"
                   >*</span
                 ></span
               ><input

@@ -11,11 +11,11 @@ const quizForm = document.querySelector("form#quizForm");
 const quizQ1Label = document.querySelector("#quizQ1"); //aray of questions
 const questionUl = document.querySelector("#questions-list");
 const submitAnswers = document.querySelector("#submit-answers");
+const messagesContainer = document.querySelector("div#messages-container");
 
 async function main() {
   userForm.addEventListener("submit", submitForm);
   generateButton.addEventListener("click", generateQuiz);
-
 }
 
 async function submitForm(submitFormEvent) {
@@ -28,8 +28,8 @@ async function submitForm(submitFormEvent) {
     },
     body: JSON.stringify({
       name: nameField.value.toLowerCase(),
-      color: q1Answer.value.toLowerCase(),
-      animal: q2Answer.value.toLowerCase(),
+      iceCream: q1Answer.value.toLowerCase(),
+      season: q2Answer.value.toLowerCase(),
       teacher: q3Answer.value.toLowerCase(),
     }),
   });
@@ -43,7 +43,7 @@ async function generateQuiz(generateQuizEvent) {
   submitAnswers.addEventListener("click", (submitAnswersEvent) => {
     submitAnswersEvent.preventDefault();
     const correctAnswers = checkAnswers(quizInputs);
-    console.log(`You got ${correctAnswers} answers right!`);
+    alert(`You got ${correctAnswers} answers right!`);
   });
 }
 
@@ -55,12 +55,12 @@ async function getQuiz() {
   for (const person of submissions) {
     QnAs.push(
       {
-        question: `What is ${person.name}'s favorite color?`,
-        answer: person.color, //add group here as a 3rd key-value pair to have multiple quiz's
+        question: `What is ${person.name}'s favorite ice cream flavor?`,
+        answer: person.iceCream, //add group here as a 3rd key-value pair to have multiple quiz's
       },
       {
-        question: `What is ${person.name}'s favorite animal?`,
-        answer: person.animal,
+        question: `What is ${person.name}'s favorite season of the year?`,
+        answer: person.season,
       },
       {
         question: `Who is ${person.name}'s favorite teacher?`,
@@ -107,6 +107,7 @@ function checkAnswers(quizInputs) {
       inputField.value.toLowerCase()
     ) {
       inputField.style.color = "green";
+      inputField.style.fontWeight = "bolder";
       correctAnswers++;
     } else {
       inputField.style.color = "red";
@@ -120,5 +121,35 @@ function RestrictSpace() {
     return false;
   }
 }
+
+function createMessage(name, message) {
+  const messageBox = document.createElement("div");
+  messageBox.setAttribute("class", "message-box");
+  const boxTop = document.createElement("div");
+  boxTop.setAttribute("class", "box-top");
+  const messageName = document.createElement("div");
+  messageName.setAttribute("class", "message-name");
+  const timeStamp = document.createElement("div");
+  timeStamp.setAttribute("class", "time-stamp");
+  const newMessage = document.createElement("div");
+  newMessage.setAttribute("class", "message");
+
+  messageName.textContent = name;
+  newMessage.textContent = message;
+
+  messagesContainer.appendChild(messageBox);
+  messagesContainer.appendChild(newMessage);
+  messageBox.appendChild(boxTop);
+  boxTop.appendChild(messageName, timeStamp);
+  messageBox.appendChild(newMessage);
+}
+// <div class="message-box">
+//           <div class="box-top">
+//             <div class="message-name">Elisa
+//             </div>
+//             <div class="time-stamp">3:52PM on 10/27/2022</div>
+//           </div>
+//           <div class="message">"I hate Jake, but I love this project."</div>
+//         </div>
 
 main();
