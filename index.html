@@ -10,6 +10,7 @@
     <script defer type="text/javascript" src="index.js"></script>
   </head>
   <body>
+    <div id="background">
     <header>
       <h1>Flatiron Crossword Form</h1>
     </header>
@@ -19,8 +20,10 @@
         <form id="totalform">
           <fieldset>
             <legend>Form Questions</legend>
+            <label for="typing-instructions" id="psa"><span>*spaces are disabled for answers. please avoid using plural forms of nouns!*</span></label>
             <label for="field1"
-              ><span>Name <span class="required">*</span></span
+              ><span>Name <span class="required"
+                >*</span></span
               ><input
                 type="text"
                 class="input-field"
@@ -93,6 +96,7 @@
           <button class="button" id="submit-answers">'POST' Results</button>
         </fieldset>
       </form>
+    </div>
     </div>
   </body>
 </html>

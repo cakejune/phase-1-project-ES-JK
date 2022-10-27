@@ -15,7 +15,7 @@ const submitAnswers = document.querySelector("#submit-answers");
 async function main() {
   userForm.addEventListener("submit", submitForm);
   generateButton.addEventListener("click", generateQuiz);
-  
+
 }
 
 async function submitForm(submitFormEvent) {
@@ -122,69 +122,3 @@ function RestrictSpace() {
 }
 
 main();
-
-// generateButton.addEventListener("click", (e) => {
-
-//     fetch("http://localhost:3000/people")
-//     .then((res) => res.json())
-//     .then((listOfPeople) => {
-//         if(listOfPeople.length >= 25) {
-//             renderQuiz(quiz);
-//         }
-//       //   if (peopleList.length >= 25) {
-//       //     //THIS IS WHERE WE BUILD THE QUIZ ELISA AND CONNOR
-//       //     formDivContainer.style.display = "none";
-//       //     const newCrossword = document.createElement("table");
-//       //     const crosswordPicture = document.createElement("img");
-//       //     const buttonContainerSpan = document.querySelector(
-//       //       "#buttonContainerSpan"
-//       //     );
-//       //     crosswordPicture.src =
-//       //       "https://1.bp.blogspot.com/-XJJhIqBrLbg/Vd7TXWcxtmI/AAAAAAAAGdc/sK2h1V2_gOc/s1600/Jo%2Bquiz.PNG";
-//       //     buttonContainerSpan.append(crosswordPicture);
-
-//       //     // THIS IS WHERE WE BUILD THE QUIZ ^^^^
-//       //   } else {
-//       //     //TELL THE USER THAT WE CAN'T GENERATE A QUIZ UNTIL WE HAVE MORE SUBMISSIONS!
-
-//       //     console.log("Not enough submissions");
-//       //   }
-//       for (let i = 0; i < listOfPeople.length; i++) {
-//         const newQuestion = document.createElement("li");
-//         newQuestion.setAttribute("data-id", listOfPeople[i].id);
-//         newQuestion.textContent = `What is ${listOfPeople[i].name}'s favorite color?`;
-//         console.log(newQuestion);
-//       }
-//       // Elisa's code below
-//       // questions.forEach((eachQuestion) => {
-//       //   for (let i = 0; i < listOfPeople.length; i++) {
-//       //     eachQuestion.setAttribute('data-id', listOfPeople[i].id);
-//       //     eachQuestion.setAttribute('group', 'populatedQuestion');
-//       //   }
-//       if (eachQuestion.id) {
-//         eachQuestion.textContent = `what is ${listOfPeople[0]}'s favorite color?`;
-//         eachQuestion.setAttribute("data-id", listOfPeople[0].id);
-//       } else {
-//         eachQuestion.style.display = "none";
-//       }
-//       // });
-//     });
-// });
-
-// function generateQuestions(arrayOfPeople) {
-//   return "a list of questions";
-// }
-
-// function populateQuestions(questions) {
-//   const quizDiv = document.createElement("div");
-//   quizDiv.setAttribute("class", "quiz");
-//   const quizSubmitButton = document.createElement("button");
-//   quizSubmitButton.setAttribute("class", "quiz");
-//   quizSubmitButton.addEventListener('click', (e) => {
-//     //push the form answers, check them against the real answers, spit out a result
-
-//   })
-// }
-
-// function showResult() {
-// }

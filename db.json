@@ -41,6 +41,27 @@
       "animal": "bear",
       "teacher": "chett",
       "id": 6
+    },
+    {
+      "name": "max",
+      "color": "red",
+      "animal": "dog",
+      "teacher": "chett",
+      "id": 7
+    },
+    {
+      "name": "angel",
+      "color": "pastelpink",
+      "animal": "rat",
+      "teacher": "someone who looks like chett",
+      "id": 8
+    },
+    {
+      "name": "alexander",
+      "color": "belgian",
+      "animal": "belgian",
+      "teacher": "chett",
+      "id": 9
     }
   ]
 }

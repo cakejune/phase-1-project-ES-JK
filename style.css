@@ -1,3 +1,6 @@
+#background {
+	background-image: url("https://cdn.discordapp.com/attachments/1034470868069400708/1035212528415944864/IMG_2996.jpg")
+}
 .form-style-3{
 	max-width: 450px;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -92,6 +95,11 @@
 
 .form-style-3 input[type=submit]:active{
 	background-color:#063388;
+}
+
+.form-style-3 #psa {
+	float: none;
+	font-size: 10px;
 }
 
 .button:hover {
