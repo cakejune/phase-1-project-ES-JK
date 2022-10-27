@@ -15,6 +15,7 @@ const submitAnswers = document.querySelector("#submit-answers");
 async function main() {
   userForm.addEventListener("submit", submitForm);
   generateButton.addEventListener("click", generateQuiz);
+  
 }
 
 async function submitForm(submitFormEvent) {

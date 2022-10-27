@@ -72,7 +72,7 @@
 .form-style-3  input[type=submit],
 .form-style-3  input[type=button]{
 	background: #EB3B88;
-	border: 1px solid #C94A81;
+	border: 1px solid #063388;
 	padding: 5px 15px 5px 15px;
 	color: #FFCBE2;
 	box-shadow: inset -1px -1px 3px #FF62A7;
@@ -84,6 +84,25 @@
 	-moz-border-radius: 3px;	
 	font-weight: bold;
 }
+
+.form-style-3 input[type=submit]:hover{
+	background-color:#4580ee;
+	transition: 0.2s;
+}
+
+.form-style-3 input[type=submit]:active{
+	background-color:#063388;
+}
+
+.button:hover {
+	background-color:#ee45d2;
+	transition: 0.2s;
+}
+
+.button:active {
+	background-color: #731363;
+}
+
 .required{
 	color:red;
 	font-weight:normal;
