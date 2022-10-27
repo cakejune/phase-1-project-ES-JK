@@ -13,7 +13,27 @@ const questionUl = document.querySelector("#questions-list");
 const submitAnswers = document.querySelector("#submit-answers");
 
 async function main() {
+  userForm.addEventListener("submit", submitForm);
   generateButton.addEventListener("click", generateQuiz);
+}
+
+async function submitForm(submitFormEvent) {
+  submitFormEvent.preventDefault();
+  const postForm = await fetch("http://localhost:3000/people", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      accept: "application/json",
+    },
+    body: JSON.stringify({
+      name: nameField.value.toLowerCase(),
+      color: q1Answer.value.toLowerCase(),
+      animal: q2Answer.value.toLowerCase(),
+      teacher: q3Answer.value.toLowerCase(),
+    }),
+  });
+  const formData = await postForm.json();
+  alert("Thank you for submitting! Click the 'Generate Quiz' button below!");
 }
 
 async function generateQuiz(generateQuizEvent) {
@@ -66,7 +86,7 @@ function renderQuiz(arrayOfQuestionsAndAnswers) {
 
   arrayOfQuestionsAndAnswers.forEach((singleQnA) => {
     const question = document.createElement("li");
-    question.setAttribute('class','populatedQuestion');
+    question.setAttribute("class", "populatedQuestion");
     const questionInput = document.createElement("input");
     questionInput.setAttribute("answer", singleQnA.answer);
     question.textContent = singleQnA.question;
@@ -101,27 +121,6 @@ function RestrictSpace() {
 }
 
 main();
-
-userForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  fetch("http://localhost:3000/people", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      accept: "application/json",
-    },
-    body: JSON.stringify({
-      name: nameField.value.toLowerCase(),
-      color: q1Answer.value.toLowerCase(),
-      animal: q2Answer.value.toLowerCase(),
-      teacher: q3Answer.value.toLowerCase(),
-    }),
-  })
-    .then((res) => res.json())
-    .then((newData) => {
-      console.log(newData);
-    });
-});
 
 // generateButton.addEventListener("click", (e) => {
 
