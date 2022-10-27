@@ -27,6 +27,13 @@
       "season": "winter",
       "teacher": "chett",
       "id": 4
+    },
+    {
+      "name": "jake",
+      "iceCream": "mintchocolatechip",
+      "season": "autumn",
+      "teacher": "chett",
+      "id": 5
     }
   ]
 }

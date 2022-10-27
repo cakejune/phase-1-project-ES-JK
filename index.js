@@ -1,4 +1,5 @@
 const userForm = document.querySelector("form#totalform");
+const messagesForm = document.querySelector('form#messages-container');
 const newPersonData = document.querySelector("#newPerson");
 const generateButton = document.querySelector("#generate");
 const formDivContainer = document.querySelector("div.form-style-3");
@@ -16,6 +17,7 @@ const messagesContainer = document.querySelector("div#messages-container");
 async function main() {
   userForm.addEventListener("submit", submitForm);
   generateButton.addEventListener("click", generateQuiz);
+  messagesForm.addEventListener('click', postMessage)
 }
 
 async function submitForm(submitFormEvent) {
@@ -137,13 +139,14 @@ function createMessage(name, message) {
   messageName.textContent = name;
   newMessage.textContent = message;
   var dt = Date.now();
-  console.log(dt);
+  timeStamp.textContent = `Epoch Time Stamp: ${dt}`;
   
 
   messagesContainer.appendChild(messageBox);
   messagesContainer.appendChild(newMessage);
   messageBox.appendChild(boxTop);
-  boxTop.appendChild(messageName, timeStamp);
+  boxTop.appendChild(messageName);
+  boxTop.appendChild(timeStamp);
   messageBox.appendChild(newMessage);
 }
 // <div class="message-box">
