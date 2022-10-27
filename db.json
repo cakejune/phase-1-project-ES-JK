@@ -38,14 +38,10 @@
   ],
   "messages": [
     {
-      "name": "name",
-      "message": "something",
+      "name": "Jake",
+      "messsage": "Hello",
+      "timeStamp": 1666909838002,
       "id": 1
-    },
-    {
-      "name": "",
-      "messsage": "Write your message here!",
-      "id": 2
     }
   ]
 }
