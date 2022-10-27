@@ -35,5 +35,17 @@
       "teacher": "chett",
       "id": 5
     }
+  ],
+  "messages": [
+    {
+      "name": "name",
+      "message": "something",
+      "id": 1
+    },
+    {
+      "name": "",
+      "messsage": "Write your message here!",
+      "id": 2
+    }
   ]
 }

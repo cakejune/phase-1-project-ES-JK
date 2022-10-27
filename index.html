@@ -24,10 +24,6 @@
             </div>
             <div class="message">"I hate Jake, but I love this project."</div>
           </div>
-          <label
-                ><span> </span
-                ><input type="submit" class="button" value="Submit"
-              /></label>
         </div>
         <div class="form-style-3">
           <form id="totalform">
@@ -99,14 +95,20 @@
           <form id="messageForm">
             <fieldset>
               <legend>Leave us a note!</legend>
-              <label for="field6"
-                ><span>Message <span class="required">*</span></span
-                ><textarea name="field6" class="textarea-field"></textarea>
-              </label>
-              <label
-                ><span> </span
-                ><input type="submit" class="button" value="Submit"
+              <label for="messageName"
+                ><span>Name: <span class="required">*</span></span
+                ><input
+                  type="text"
+                  class="input-field"
+                  name="MName"
+                  value=""
+                  id="messageNameValue"
               /></label>
+              <label
+            ><span>Message <span class="required">*</span></span>
+            <input type="text" class="input-field" name="message" placeholder="Write your message here!" value="" id="messageValue">
+            <input type="submit" class="button" value="Submit"
+          /></label>
             </fieldset>
           </form>
         </div>
