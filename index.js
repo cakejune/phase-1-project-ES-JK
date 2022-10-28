@@ -107,7 +107,7 @@ async function generateQuiz(generateQuizEvent) {
   submitAnswers.addEventListener("click", (submitAnswersEvent) => {
     submitAnswersEvent.preventDefault();
     const correctAnswers = checkAnswers(quizInputs);
-    alert(`You got ${correctAnswers} answers right!`);
+    alert(`You have ${correctAnswers} answers right!`);
   });
 }
 
