@@ -9,9 +9,15 @@ const quizDiv = document.querySelector('#quizDiv');
 const nameField = document.querySelector("#namevalue");
 const q1Answer = document.querySelector("input#q1value");
 const q2Answer = document.querySelector("input#q2value");
+const q3Answer = document.querySelector("input#q3value");
+const q4Answer = document.querySelector("input#q4value");
+const q5Answer = document.querySelector("input#q5value");
+const q6Answer = document.querySelector("input#q6value");
+const q8Answer = document.querySelector("input#q8value");
+
 const messageAnswer = document.querySelector("#messageValue");
 const messageNameValue = document.querySelector("#messageNameValue");
-const q3Answer = document.querySelector("select.select-field");
+const q7Answer = document.querySelector("select.select-field");
 const quizForm = document.querySelector("form#quizForm");
 const quizQ1Label = document.querySelector("#quizQ1"); //aray of questions
 const questionUl = document.querySelector("#questions-list");
@@ -46,7 +52,7 @@ async function postUserMessage(submitFormEvent) {
     },
     body: JSON.stringify({
       name: messageNameValue.value,
-      messsage: messageAnswer.value,
+      message: messageAnswer.value,
       timeStamp: dt,
     }),
   });
@@ -92,7 +98,12 @@ async function submitForm(submitFormEvent) {
       name: nameField.value.toLowerCase(),
       iceCream: q1Answer.value.toLowerCase(),
       season: q2Answer.value.toLowerCase(),
-      teacher: q3Answer.value.toLowerCase(),
+      food: q3Answer.value.toLowerCase(),
+      tropicalfruit: q4Answer.value.toLowerCase(),
+      hobby: q5Answer.value.toLowerCase(),
+      color: q6Answer.value.toLowerCase(),
+      teacher: q7Answer.value.toLowerCase(),
+      group: q8Answer.value.toLowerCase(),
     }),
   });
   const formData = await postForm.json();
@@ -100,14 +111,16 @@ async function submitForm(submitFormEvent) {
 }
 
 async function generateQuiz(generateQuizEvent) {
+  
   quizDiv.style.display = "block";
+  quizDiv.style.marginTop = "300px";
   formContainer.style.display = "none";
   const quiz = await getQuiz();
   const quizInputs = renderQuiz(quiz);
   submitAnswers.addEventListener("click", (submitAnswersEvent) => {
     submitAnswersEvent.preventDefault();
     const correctAnswers = checkAnswers(quizInputs);
-    alert(`You have ${correctAnswers} answers right!`);
+    alert(`You got ${correctAnswers} answers right!`);
   });
 }
 
@@ -127,14 +140,30 @@ async function getQuiz() {
         answer: person.season,
       },
       {
-        question: `Who is ${person.name}'s favorite teacher?`,
-        answer: person.teacher,
-      }
+        question: `What is ${person.name}'s favorite food?`,
+        answer: person.food,
+      },
+      {
+        question: `What is ${person.name}'s favorite tropical fruit?`,
+        answer: person.tropicalfruit,
+      },
+      {
+        question: `What is ${person.name}'s favorite hobby?`,
+        answer: person.hobby,
+      },
+      {
+        question: `What is ${person.name}'s favorite color?`,
+        answer: person.color,
+      },
+      // {
+      //   question: `Who is ${person.name}'s favorite teacher?`,
+      //   answer: person.teacher,
+      // }
     );
   }
 
-  for (let i = 0; i < 10; i++) {
-    //get 10 random QnAs from the array I created above (QnAs) and adding them to a new array (selectedQnAs)
+  for (let i = 0; i < 20; i++) {
+    //get 20 random QnAs from the array I created above (QnAs) and adding them to a new array (selectedQnAs)
     const index = Math.floor(Math.random() * (QnAs.length - 1));
     selectedQnAs.push(QnAs[index]);
     QnAs.splice(index, 1);

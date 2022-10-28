@@ -12,11 +12,11 @@
   <body>
     <div class="image" id="background">
       <header>
-        <h1 class="mainHeader">Flatiron Form</h1>
+        <h1 class="mainHeader">'Flatiron': '"GET" to know your Cohort Quiz' 😺 </h1>
       </header>
       <main>
         <div id="messages-container">
-          <h3 id="messages-header">😺 Messages from our friends 😺</h3>
+          <h3 id="ursula"> Messages from our friends 😺</h3>
           <div class="message-box">
             <div class="box-top">
               <div class="message-name">Elisa</div>
@@ -25,16 +25,18 @@
             <div class="message">"I hate Jake, but I love this project."</div>
           </div>
         </div>
+        <div>
+          <h1 id="mustRead">
+          *spaces are disabled for answers. please avoid using plural
+          forms of nouns!*
+          </div>
         <div class="form-style-3" id="formContainer">
           <form id="totalform">
             <fieldset>
               <legend>Form Questions</legend>
               <label for="typing-instructions" id="psa"
-                ><span
-                  >*spaces are disabled for answers. please avoid using plural
-                  forms of nouns!*</span
-                ></label
-              >
+                ></label >
+
               <label for="field1"
                 ><span>Name: <span class="required">*</span></span
                 ><input
@@ -56,6 +58,7 @@
                   value=""
                   id="q1value"
               /></label>
+              
               <label onkeypress="return RestrictSpace()" for="Q2"
                 ><span
                   >What is your favorite season of the year?<span
@@ -69,31 +72,78 @@
                   value=""
                   id="q2value"
               /></label>
-              <label for="Q3"
+              <label onkeypress="return RestrictSpace()" for="Q3"
+                ><span
+                  >What is your favorite type of food?<span class="required"
+                    >*</span
+                  ></span
+                ><input
+                  type="text"
+                  class="input-field"
+                  name="Q3"
+                  value=""
+                  id="q3value"
+              /></label>
+              <label onkeypress="return RestrictSpace()" for="Q4"
+                ><span
+                  >What is your favorite tropical fruit?<span class="required"
+                    >*</span
+                  ></span
+                ><input
+                  type="text"
+                  class="input-field"
+                  name="Q4"
+                  value=""
+                  id="q4value"
+              /></label>
+              <label onkeypress="return RestrictSpace()" for="Q5"
+                ><span
+                  >What is your favorite hobby?<span class="required"
+                    >*</span
+                  ></span
+                ><input
+                  type="text"
+                  class="input-field"
+                  name="Q5"
+                  value=""
+                  id="q5value"
+              /></label>
+              <label onkeypress="return RestrictSpace()" for="Q6"
+                ><span
+                  >What is your favorite color?<span class="required"
+                    >*</span
+                  ></span
+                ><input
+                  type="text"
+                  class="input-field"
+                  name="Q6"
+                  value=""
+                  id="q6value"
+              /></label>
+              <label for="Q7"
                 ><span>Who is your favorite teacher?</span
-                ><select name="Q3" class="select-field">
+                ><select name="Q7" class="select-field">
                   <option value="Chett">Chett</option>
                   <option value="Chett">Chett</option>
                   <option value="Chett">Chett</option>
                   <option value="Someone who looks like Chett">
                     Someone who looks like Chett
                   </option>
-                </select></label
-              >
-              <label for="Q4"
+                </select></label>
+              <label for="Q8"
                 ><span>Group</span
-                ><select name="Q4" class="select-field">
+                ><select name="Q8" class="select-field">
                   <option value="flatiron">Flatiron NYC Cohort</option>
                 </select>
               </label>
               <label
                 ><span> </span
-                ><input type="submit" class="button" value="Submit"
+                ><input name="Q8" type="submit" class="button" value="Submit" id="q8value"
               /></label>
             </fieldset>
           </form>
           <form id="messageForm">
-            <fieldset>
+            <fieldset class="fieldset1">
               <legend>Leave us a note!</legend>
               <label for="messageName"
                 ><span>Name: <span class="required">*</span></span
@@ -119,7 +169,7 @@
           <div id="quizDiv">
             <form id="quizForm">
               <fieldset>
-                <legend>"GET" to know your Cohort 😺</legend>
+                <legend id="octavia">HOW WELL DO YOU KNOW YOUR COHORT?</legend>
                 <ol id="questions-list"></ol>
                 <button class="button" id="submit-answers">
                   'POST' Results

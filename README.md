@@ -1,34 +1,22 @@
-<!-- --HI--
---BYE---
-Styling Ideas
-Themes:
-- NYT theme: make our crossword puzzle look like it was made by Ny times -->
-Wednesday:
-- did this 
-- did this-
-- did this-
 
-To Add (5:19PM on 10/26/22)
-- Allignment
-- max width (form)
-- Post Results Button
-    - append somethig to the dom 
-    - Change the DOM in some way (for example, refresh the page and show the quiz results).
-        - Have a button on that page that says "Take another quiz" that takes you back to the quiz page
-    - Put a Check √ or x next to the input field box when it's right or wrong
-- Create an image for the header
-    - stylize the header (put in a div container?)
-- Messages window . Make it so the submit button sends a message only if it contains something. That message gets appended
-to a div container to the right of the form. This DIV container is scrollable, and the messages appear like reviews on a yelp page
-with a time/date stamp, the user(name from form) who submitted the message, and the message itself
-- Let's make better questions.
-- Let's put instructions on the website, telling the user about the "spaces" restriction onkeydown, and how using plural
-will confuse the quiz taking.
-√ Submit form - make the POST submit form change color when hovered over, change color when clicked, and change back when keyup(or whatever it is) - 
+# GETTING TO KNOW THE COHORT!!!
 
-Idea:
+ In this project our idea was to learn more about the ***Amazing*** peaople in our  ***Wonderful*** cohort!! All there is to it is a QnA about your self that will get submitted to our quiz generator 
 
-every user has a piece of a puzzle:
-areas of a website are hidden behind keys. Keys are the shapes of a string of puzzles.
-only when users put their unique pieces together in the proper order does the key fit
-once the key fits, the users can access the area of the website. 
+
+
+## *How it Works*
+
+---
+
+1. When the page is loaded it displays a form with questions about you lovely individuals.
+
+2. Once the user has filled out the question, clicking the "submit" button will place the form data into our own API. 
+
+3. After the website has graciously thanked you for your submissions, feel free to generate a quiz with a random selection of questions about your classmates. BUT, before that, please leave us a message on our message board! (once you start your quiz, the message board will no longer be accessible.
+
+4. Once you **attempt** to answer all the questions, 'POST' your results using the button below. After an alert displays your score, our UI will color-code your answers based on their truthines--i mean, their correctness.
+
+5. Stay tuned for some upcoming features we're working on for version 2, 3, and 4, of the Flatiron Cohort Quiz!
+
+6. There is an easter egg--though it should be called an easter cat-- hidden in our project. Chett, if you see your cats anywhere, could you let us know?
