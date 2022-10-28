@@ -29,6 +29,9 @@
       "id": 4
     },
     {
+<<<<<<< HEAD
+     
+=======
       "name": "jake",
       "iceCream": "mintchocolatechip",
       "season": "autumn",
@@ -48,6 +51,7 @@
       "messsage": "Your project belongs to me now.",
       "timeStamp": 1666911128742,
       "id": 2
+>>>>>>> 02e629f5af14bbedf45d7ca306ff8dc8a2adc83e
     }
   ]
 }
